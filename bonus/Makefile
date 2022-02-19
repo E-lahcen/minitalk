@@ -33,7 +33,7 @@ all : tmp $(NAME1) $(NAME2)
 	@mv client_bonus server_bonus ../
 
 $(NAME1) : $(OBJS)
-		@$(CC) $(FLAGS) objs_bonus/utils_bonus.o objs_bonus/server_bonus.o  -o $@
+		@$(CC) $(FLAGS) objs_bonus/utils_bonus.o objs_bonus/server_bonus.o -o $@
 		@echo "$(GREEN)server_bonus.c successfully compiled"
 
 $(NAME2) : $(OBJS)
@@ -43,10 +43,6 @@ $(NAME2) : $(OBJS)
 objs_bonus/%.o: srcs_bonus/%.c include_bonus/minitalk_bonus.h
 	@$(CC) $(FLAGS) -c -o $@ $<
 	@echo "$(BLUE)Creating bonus object file -> $(WHITE)$(notdir $@)... $(RED)[Done]$(NOC)"
-
-
-# %.o : %.c
-# 	@$(CC) $(FLAGS) -c $<
 
 tmp :
 	@mkdir -p objs_bonus

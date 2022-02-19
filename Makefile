@@ -37,7 +37,7 @@ $(NAME2) : $(OBJS)
 
 
 $(NAME1) : $(OBJS)
-		@$(CC) $(FLAGS) objs/server.o objs/utils.o  -o $@
+		@$(CC) $(FLAGS) objs/server.o objs/utils.o -o $@
 		@echo "$(GREEN)server.c successfully compiled"
 
 objs/%.o: srcs/%.c include/minitalk.h
@@ -56,7 +56,7 @@ fclean : clean
 	@rm -f client_bonus server_bonus
 	@make -C bonus fclean
 
-bonus : fclean
+bonus :
 	@make -C bonus
 	
 re : fclean all
